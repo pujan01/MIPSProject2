@@ -11,3 +11,5 @@ main:
 	la $a0, userInput
 	li $a1, 1000	
 	syscall
+	la $a1, userInput
+	li $t9, 0				#if it is 0, then a valid character is not found. 1 means a non-space character is found
