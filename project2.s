@@ -57,4 +57,8 @@ validCharactersLoop:
 	beq $t7, 4, loop2_exit_check		#if the value of the counter = 4, then the loop exits
 	addi $t7, $t7, 1 			# incrementing the value of the counter
 	addi $s6, $s6, -1			#increasing the value of the address to load 
+	lb $t0, ($s6)				# $s6 has the address of the fourth or the last byte of the input in first iteration
+	
+	beq $t0, 10, validCharactersLoop  	# if there is an end line character then I will continue the loop
+	
 
