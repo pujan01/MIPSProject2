@@ -53,3 +53,8 @@ loop1_exit_check:
 	li $t4, 1			# this register holds the exponent of 30. At first, it is 1, then 36, then 36*36
 	li $t7, 0			# this is my loop counter. when it equals 3 the loop exits. 
 	la $s6, fourCharacters+4
+validCharactersLoop:
+	beq $t7, 4, loop2_exit_check		#if the value of the counter = 4, then the loop exits
+	addi $t7, $t7, 1 			# incrementing the value of the counter
+	addi $s6, $s6, -1			#increasing the value of the address to load 
+
