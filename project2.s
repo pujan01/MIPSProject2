@@ -45,3 +45,7 @@ length_loop:
 	addi $a1, $a1, 3 		# I have added 3 to $a1 because I have already read 4 characters from input string
 	j length_loop
 
+loop1_exit_check:
+	beq $t9, 0, emptyInputError 		# if $t9 = 0 then, it means no non-space character is found.
+
+
