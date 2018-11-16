@@ -17,3 +17,6 @@ main:
 length_loop:
 	lb $a0,($a1)        			# read the character
 	addi $a1, $a1, 1
+	
+	beq $a0, 0, loop1_exit_check		#if it is a null character check if the input is empty
+	beq $a0, 10, loop1_exit_check		#if there is an end line character then I will check if the input is empty or if it has valid input
