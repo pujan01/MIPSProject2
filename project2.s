@@ -41,3 +41,7 @@ length_loop:
 	sb $a0, 2($s6)
 	lb $a0, 2($a1) 			#storing the fourth non-space character to the starting address of fourCharacters
 	sb $a0, 3($s6)
+	
+	addi $a1, $a1, 3 		# I have added 3 to $a1 because I have already read 4 characters from input string
+	j length_loop
+
