@@ -74,3 +74,8 @@ digit...  if t0 < 58, then t2=1
 	addi $t9, $t0, -48			# the t9 register is used for my calculation in the later phase
 	beq $t3, 1, multiply 	
 
+#uppercase
+	slti $t2, $t0, 85	 		#checking if it is a valid uppercase letter. my range is A to T
+	li $t3, 64 
+	slt $t3, $t3, $t0 
+	and $t3, $t3, $t2  			# if t3 and t2 are same, t3  = 1 
