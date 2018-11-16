@@ -60,5 +60,9 @@ validCharactersLoop:
 	lb $t0, ($s6)				# $s6 has the address of the fourth or the last byte of the input in first iteration
 	
 	beq $t0, 10, validCharactersLoop  	# if there is an end line character then I will continue the loop
+	beq $t0, 32, whatKindOfSpace		# if there is a space in front or back of the input, we just carry on with the loop
+	beq $t0, 0, validCharactersLoop		# if it is a null character, then it will just skip and continue the loop
+
+	li $a3, 1				# the program counter reaches this point if the character is not null, space or endline.
 	
 
