@@ -33,3 +33,7 @@ length_loop:
 	#storing the first non-space character to the starting address of fourCharacters
 	lb $a0, -1($a1)
 	sb $a0, 0($s6)
+
+	lb $a0, 0($a1) 			#storing the second non-space character to the starting address of fourCharacters
+	sb $a0, 1($s6)
+	
