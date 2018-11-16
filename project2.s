@@ -71,3 +71,6 @@ digit...  if t0 < 58, then t2=1
 	li $t3, 47
 	slt $t3, $t3, $t0                        # if 47 < t0,  t3 = 1 
 	and $t3, $t3, $t2  			# if t3 and t2 are same, t3  = 1 
+	addi $t9, $t0, -48			# the t9 register is used for my calculation in the later phase
+	beq $t3, 1, multiply 	
+
