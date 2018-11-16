@@ -48,4 +48,8 @@ length_loop:
 loop1_exit_check:
 	beq $t9, 0, emptyInputError 		# if $t9 = 0 then, it means no non-space character is found.
 
-
+	# this is the starting of the new loop that calculates the sum and also finds out if there are any invalid characters in the input
+	li $s5, 0			# this register holds the final sum of the Base-30 number
+	li $t4, 1			# this register holds the exponent of 30. At first, it is 1, then 36, then 36*36
+	li $t7, 0			# this is my loop counter. when it equals 3 the loop exits. 
+	la $s6, fourCharacters+4
