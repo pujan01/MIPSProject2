@@ -24,3 +24,6 @@ length_loop:
 	beq $a0, 32, length_loop		#if there is a space in front or back of the input, we just carry on with the loop
 	
 	beq $t9, 1, inputLongError 		# this code is executed if there is no space or endline. 
+						#for the first time, the value in $t9 = 0, hence inputLongError is not thrown
+						#however, if we get here for the second time, it means that a non-space character was found 
+						# already, soo an input too long error is thrown. 
