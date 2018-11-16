@@ -30,4 +30,6 @@ length_loop:
 	li $t9, 1				# $t9 = 1 means that a non-space character is discovered
 	# in these lines I am storing 4 characters after a non-space character is found in  another string named fourCharacters. 
 	la $s6, fourCharacters
-	
+	#storing the first non-space character to the starting address of fourCharacters
+	lb $a0, -1($a1)
+	sb $a0, 0($s6)
