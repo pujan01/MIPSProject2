@@ -20,3 +20,7 @@ length_loop:
 	
 	beq $a0, 0, loop1_exit_check		#if it is a null character check if the input is empty
 	beq $a0, 10, loop1_exit_check		#if there is an end line character then I will check if the input is empty or if it has valid input
+	
+	beq $a0, 32, length_loop		#if there is a space in front or back of the input, we just carry on with the loop
+	
+	beq $t9, 1, inputLongError 		# this code is executed if there is no space or endline. 
