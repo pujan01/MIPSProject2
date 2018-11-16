@@ -6,3 +6,8 @@
 	fourCharacters: .space 4
 .text
 main:
+	#asking the user for input
+	li $v0, 8
+	la $a0, userInput
+	li $a1, 1000	
+	syscall
