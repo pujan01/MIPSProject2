@@ -103,3 +103,8 @@ loop2_exit_check:
 	add $a0, $zero, $s5 
 	syscall
 	j exit
+inputLongError: 				#this code will be executed If the string has more than 4 characters.,
+	li $v0, 4				#the program prints the message of "Input is too long."
+	la $a0, inputLong		
+	syscall
+	j exit
