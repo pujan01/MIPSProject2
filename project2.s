@@ -89,3 +89,8 @@ digit...  if t0 < 58, then t2=1
 	addi $t9, $t0, -87
 	bne $t3, 1, invalidNumberError
 	
+multiply:
+	mul $t5, $t4, $t9			# $t5 contains the product of the base- 30 exponent and our input number
+	add $s5, $s5, $t5			# that product is added to the register that stores the sum 
+	mul $t4, $t4, 30  
+	j validCharactersLoop	
