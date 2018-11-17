@@ -108,3 +108,9 @@ inputLongError: 				#this code will be executed If the string has more than 4 ch
 	la $a0, inputLong		
 	syscall
 	j exit
+emptyInputError: 				#this code will be executed if the input string is empty
+	li $v0, 4				#If the string has zero characters, the program prints the message of "Input is empty."
+	la $a0, emptyInput
+	syscall
+	j exit
+
