@@ -97,3 +97,9 @@ multiply:
 whatKindOfSpace:				# this evaluates if the space is in between the character or at the trailing point
 	beq $a3, 1, invalidNumberError		# once non-null, non-space, non-endline is found, a3 = 1, if it is in between the characters, then it goes to invalid input
 	j validCharactersLoop			#if it is a trailing space, go back to loop
+	 
+loop2_exit_check:
+	li $v0, 1
+	add $a0, $zero, $s5 
+	syscall
+	j exit
