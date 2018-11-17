@@ -113,4 +113,10 @@ emptyInputError: 				#this code will be executed if the input string is empty
 	la $a0, emptyInput
 	syscall
 	j exit
+	
+invalidNumberError: 				#If the string includes at least one character not in the specified set, the program prints the 
+	li $v0, 4				#message of "Invalid base-30 number." which is (3+27)
+	la $a0, invalidNumber
+	syscall
+	j exit
 
