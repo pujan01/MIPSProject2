@@ -118,5 +118,9 @@ invalidNumberError: 				#If the string includes at least one character not in th
 	li $v0, 4				#message of "Invalid base-30 number." which is (3+27)
 	la $a0, invalidNumber
 	syscall
-	j exit
+	
+				
+exit:
+li $v0, 10			#tell the system to prepare for exit
+syscall
 
