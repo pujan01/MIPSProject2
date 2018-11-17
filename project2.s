@@ -81,4 +81,9 @@ digit...  if t0 < 58, then t2=1
 	and $t3, $t3, $t2  			# if t3 and t2 are same, t3  = 1 
 	addi $t9, $t0, -55     
 	beq $t3, 1, multiply 	
-	
+#lowercase
+	slti $t2, $t0, 85	 		#checking if it is a valid lowercase letter
+	li $t3, 64 
+	slt $t3, $t3, $t0 
+	and $t3, $t3, $t2  			# if t3 and t2 are same, t3  = 1 
+
